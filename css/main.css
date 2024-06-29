@@ -49,6 +49,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -67,10 +68,10 @@ img {
 
 table {
   border-collapse: collapse;
-  max-width: 350px;
-  min-width: 350px;
+  max-width: 450px;
+  min-width: 450px;
   height: 200px;
-  margin: 10px;
+  margin: 50px;
 }
 
 table, th, td {
