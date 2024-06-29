@@ -1,0 +1,54 @@
+
+
+.heder-box{
+	display: flex;
+		justify-content: center;
+	width: 100%;
+		height: 100%;
+	}
+	
+	.heder-squer{
+	margin: 100px 0;
+	color: rgb(37, 0, 96);
+	font-size: 100px;
+	font-weight: bold;
+	
+}
+
+.section-squer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+	
+}
+
+.box-squer {
+            width: 800px;
+            height: 800px;
+            border: solid 1px;
+            background-color: #f8abb4;
+            position: relative;
+	}
+	
+	.squer{
+   position: absolute;
+   cursor: pointer;
+}
+
+
+        table {
+            border-collapse: collapse;
+            max-width:  350px;
+				min-width: 350px;
+				height: 200px;
+			
+				margin: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }

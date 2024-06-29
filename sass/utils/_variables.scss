@@ -1,0 +1,82 @@
+// $primary-text-color: aqua;
+// // $primary-text-color: #050c43;
+// $Secondary-text-color: #3fa9f5;
+// $Accent: #FF8230;
+// $White-color: #FFFFFF;
+// $svg-color: #33FF99;
+// $line-color: #0000FF;
+// $histor-color-text: #d5d095;
+// $prim-histor-text: #fffdd1;
+// $prim-indusry-color: aqua;
+
+// $Logo-color: #036db068;
+
+
+// $anime-elements: cubic-bezier(0, .84, .79, .81);
+// $anime-hero: cubic-bezier(.57, -0.6, .57, 1.37);
+// // $anime-border: cubic-bezier(.57, -0.6, .97, 1.35);
+// $anime-border: cubic-bezier(.57, -0.6, .06, 1.63);
+// $anime-text: cubic-bezier(.36, .89, .56, 1.11);
+// $anime-section: cubic-bezier(.05, 1.12, .001, -0.115);
+// $anime-card-industry: cubic-bezier(0, .79, .27, .31);
+// $anime-card-svg: cubic-bezier(1, .21, 0, 1.64);
+// // $anime-section: cubic-bezier(.07, 1.09, 0, -0.13);
+// // $anime-section: cubic-bezier(.05, 1.044, .001, -0.051);
+// $animation-logo: 9000ms cubic-bezier(0.4, 0, 0.2, 1);
+// $animation: 0.1ms;
+// $animation-card: 800ms cubic-bezier(0.4, 0, 0.2, 1);
+// $animation-head: 1s;
+
+// $bg-color: #1f2f52;
+// $bg-water-head: linear-gradient(to bottom,
+
+// 		#0159cce1 30%,
+// 		#001574d8 85%);
+
+
+
+
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.link {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.visually-hidden {
+	overflow: hidden;
+	// position: absolute;
+	width: 0;
+	height: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+// 6f727b  #adb2c1
+// body {
+// 	font-family: 'Courier New', Courier, monospace;
+// 	background-color: $bg-color;
+// 	color: $primary-text-color;
+// 	font-family: Roboto, sans-serif;
+// 	letter-spacing: 0.03em;
+// 	margin: 0;
+// }
