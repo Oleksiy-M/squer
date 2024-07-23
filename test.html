@@ -1,134 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Example</title>
+		<title>test</title>
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">
+	<link rel="stylesheet" href="./css/main.min.css">
 
-
-	<style>
-	body {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		height: 100vh;
-	width: 100vw;
-	}
-
-	h1 {
-		display: block;
-		color: indigo;
-		font-size: 48px;
-	}
-
-button {
-	display: block;
-		position: absolute;
-		transform: translate(-50%, -50%);
-
-	padding: 20px;
-	background: black;
-	border-radius: 5px;
-	border-color: coral;
-		/* border-collapse:collapse; */
-	color: white;
-	font-weight: bolder;
-	
-}
-
-
-table {
-	/* display:flex;
-	flex-direction: column; */
-	/* padding: 50px; */
-	/* border: 1px solid; */
-	border-collapse: collapse;
-	/* border-color: indigo; */
-}
-/* tr {
-	width: 20px;;
-} */
-
-		th, td {
-			border: 1px solid #180f42;
-			padding: 28px;
-			width: 50px;
-			text-align: center;
-		}
-
-			/* th {
-			background-color: #4CAF50;
-			color: rgb(191, 255, 0);
-		} */
-</style>
-</head>
-
-
-
+	</head>
 <body>
-	<h1 id="header">Hello, World!</h1>
-	<button id="myButton">Click Me!</button>
+	
+	<main>
+		
+			<div class="heder-box">
+				<h1 class="heder-squer">Test Squer</h1>
+			</div>
+
+<section class="section-squer">
+
+		<div class="box-squer">
+				<svg class="squer" width="800" height="800">
+					<rect id="draggable-rect" x="0" y="0" width="100" height="100" style="fill:blue;" />
+				</svg>
+		</div>
+
 
 		<table>
-		<thead>
-		<tr>
-				<th>№</th>
-				<th>X</th>
-				<th>Y</th>
-		</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Coordinate</td>
-				<td id="x-coord"> </td>
-				<td id="y-coord"></td>
-			</tr>
-		</tbody>
-					<!-- <td id="x-coord">0</td>
-					<td id="y-coord">0</td> -->
+			<thead>
+				<tr>
+					<th>X Coordinate</th>
+					<th>Y Coordinate</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="x-coord">0</td>
+					<td id="y-coord">0</td>
+				</tr>
+			</tbody>
 		</table>
 
+</section>
+
+	</main>
 
 
-
-	<script>
-		const header = document.getElementById('header');
-		const button = document.getElementById('myButton');
-
-		button.addEventListener('click', () => {
-			header.textContent = 'Boom!';
-			header.style.color = 'red';
-		});
-	</script>
-
-
-
-<script>
-
-const buttom = document.getElementById('myButton');
-const xCoord = document.getElementById('x-coord');
-const yCoord = document.getElementById('y-coord');
-
-			document.addEventListener('mousemove', (event) => {
-
-				const mouseX = event.clientX;
-				const mouseY = event.clientY;
-				
-				myButton.style.left = `${mouseX}px`;
-				myButton.style.top = `${mouseY}px`;
-
-				xCoord.textContent = mouseX;
-				yCoord.textContent = mouseY;
-				
-			});
-
-
-</script>
-
-
-
+	<script src="./js/squer.js"></script>
 </body>
-
 </html>
