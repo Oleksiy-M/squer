@@ -81,4 +81,22 @@ table, th, td {
 th, td {
   padding: 8px;
   text-align: center;
+}
+
+nav {
+  width: 100vw;
+  padding: 30px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  margin-right: 30px;
+}
+
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
