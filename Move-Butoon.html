@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Example-Button</title>
+	<link rel="stylesheet" href="./css/main.min.css">
+
+
+
+	<style>
+		main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			height: 100vh;
+			width: 100vw;
+		}
+
+		h1 {
+			display: block;
+			color: indigo;
+			font-size: 48px;
+		}
+
+		button {
+			display: block;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			/* z-index: -1; */
+
+			padding: 20px;
+			background: black;
+			border-radius: 5px;
+			border-color: coral;
+			/* border-collapse:collapse; */
+			color: white;
+			font-weight: bolder;
+
+		}
+
+
+		table {
+			z-index: -1;
+			border-collapse: collapse;
+			height: 10px;
+		}
+
+		th,
+		td {
+			border: 1px solid #180f42;
+			padding: 10px;
+			width: 50px;
+			text-align: center;
+		}
+
+		/* th {
+			background-color: #4CAF50;
+			color: rgb(191, 255, 0);
+		} */
+	</style>
+</head>
+
+
+
+<body>
+
+
+	<nav>
+		<ul>
+			<li> <a href="./index.html">Test Squer</a></li>
+			<li> <a href="./Example-Button.html">Example-Button</a></li>
+			<li> <a href="./Move-Butoon.html">Move-Button</a></li>
+
+		</ul>
+	</nav>
+
+	<main>
+
+		<h1 id="myHeader">Hello, World!</h1>
+		<button id="myButton">Click Me!</button>
+
+		<table>
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>X</th>
+					<th>Y</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Coordinate</td>
+					<td id="x-coord"> </td>
+					<td id="y-coord"></td>
+				</tr>
+			</tbody>
+			<!-- <td id="x-coord">0</td>
+					<td id="y-coord">0</td> -->
+		</table>
+
+	</main>
+
+
+
+	<script>
+
+		const header = document.getElementById('myHeader');
+		const button = document.getElementById('myButton');
+
+		const xCoord = document.getElementById('x-coord');
+		const yCoord = document.getElementById('y-coord');
+		const nav = document.querySelector('nav');
+
+
+		button.addEventListener('click', () => {
+			header.textContent = 'Welcom!';
+			header.style.color = 'red';
+		});
+
+	</script>
+
+
+
+
+</body>
+
+</html>
