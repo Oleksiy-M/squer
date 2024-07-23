@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Example</title>
+
+
+	<style>
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100vh;
+	width: 100vw;
+	}
+
+	h1 {
+		display: block;
+		color: indigo;
+		font-size: 48px;
+	}
+
+button {
+	display: block;
+		position: absolute;
+		transform: translate(-50%, -50%);
+
+	padding: 20px;
+	background: black;
+	border-radius: 5px;
+	border-color: coral;
+		/* border-collapse:collapse; */
+	color: white;
+	font-weight: bolder;
+	
+}
+
+
+table {
+	/* display:flex;
+	flex-direction: column; */
+	/* padding: 50px; */
+	/* border: 1px solid; */
+	border-collapse: collapse;
+	/* border-color: indigo; */
+}
+/* tr {
+	width: 20px;;
+} */
+
+		th, td {
+			border: 1px solid #180f42;
+			padding: 28px;
+			width: 50px;
+			text-align: center;
+		}
+
+			/* th {
+			background-color: #4CAF50;
+			color: rgb(191, 255, 0);
+		} */
+</style>
+</head>
+
+
+
+<body>
+	<h1 id="header">Hello, World!</h1>
+	<button id="myButton">Click Me!</button>
+
+		<table>
+		<thead>
+		<tr>
+				<th>№</th>
+				<th>X</th>
+				<th>Y</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Coordinate</td>
+				<td id="x-coord"> </td>
+				<td id="y-coord"></td>
+			</tr>
+		</tbody>
+					<!-- <td id="x-coord">0</td>
+					<td id="y-coord">0</td> -->
+		</table>
+
+
+
+
+	<script>
+		const header = document.getElementById('header');
+		const button = document.getElementById('myButton');
+
+		button.addEventListener('click', () => {
+			header.textContent = 'Boom!';
+			header.style.color = 'red';
+		});
+	</script>
+
+
+
+<script>
+
+const buttom = document.getElementById('myButton');
+const xCoord = document.getElementById('x-coord');
+const yCoord = document.getElementById('y-coord');
+
+			document.addEventListener('mousemove', (event) => {
+
+				const mouseX = event.clientX;
+				const mouseY = event.clientY;
+				
+				myButton.style.left = `${mouseX}px`;
+				myButton.style.top = `${mouseY}px`;
+
+				xCoord.textContent = mouseX;
+				yCoord.textContent = mouseY;
+				
+			});
+
+
+</script>
+
+
+
+</body>
+
+</html>
