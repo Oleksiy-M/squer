@@ -5,12 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Example-Button</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">
 	<link rel="stylesheet" href="./css/main.min.css">
 
 
 
 	<style>
-
+body {
+	margin: 0;
+}
 	main {
 		display: flex;
 		justify-content: center;
@@ -33,7 +36,7 @@ button {
 		/* z-index: -1; */
 
 	padding: 20px;
-	background: black;
+	background: indigo;
 	border-radius: 5px;
 	border-color: coral;
 		/* border-collapse:collapse; */
@@ -49,8 +52,8 @@ z-index: -1;
 	height: 10px;
 }
 th, td {
-	border: 1px solid #180f42;
-	padding: 10px;
+	border: 1px solid #02fa5d;
+	padding: 5px;
 	width: 50px;
 			text-align: center;
 		}
@@ -69,9 +72,9 @@ th, td {
 
 	<nav>
 		<ul>
-			<li> <a href="./index.html">Test Squer</a></li>
-			<li> <a href="./Example-Button.html">Example-Button</a></li>
-			<li> <a href="./Move-Butoon.html">Move-Button</a></li>
+			<li> <a href="./index.html">Test 1</a></li>
+			<li> <a href="./Example-Button.html">Test 2</a></li>
+			<li> <a href="./Move-Butoon.html">Test 3</a></li>
 	
 		</ul>
 	</nav>
@@ -119,11 +122,6 @@ th, td {
 		header.style.color = 'red';
 	});
 
-
-		button.addEventListener('click', () => {
-			header.textContent = 'Welcome!';
-			header.style.color = 'red';
-		});
 
 		document.addEventListener('mousemove', (event) => {
 			const mouseX = event.clientX;
