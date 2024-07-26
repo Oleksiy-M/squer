@@ -106,8 +106,7 @@
 					<td id="y-coord"></td>
 				</tr>
 			</tbody>
-			<!-- <td id="x-coord">0</td>
-					<td id="y-coord">0</td> -->
+	
 		</table>
 
 	</main>
@@ -117,35 +116,64 @@
 
 	<script>
 
-		// const header = document.getElementById('myHeader');
+		const header = document.getElementById('myHeader');
 		const button = document.getElementById('myButton');
-
-		// const xCoord = document.getElementById('x-coord');
-		// const yCoord = document.getElementById('y-coord');
+		const xCoord = document.getElementById('x-coord');
+		const yCoord = document.getElementById('y-coord');
 		// const nav = document.querySelector('nav');
 
-		let isDragging = false;
+		let isMoving = false;
 
-	myButton.addEventListener('mousedown', () => {
-		isDragging = true;
-	});
+		function centerButton() {
+			const left = (window.innerWidth - button.offsetWidth) / 2;
+			const top = (window.innerHeight - button.offsetHeight) / 2;
 
-	document.addEventListener('mouseup', () => {
-isDragging = false;
-	});
+			button.style.left = `${left}px`;
+			button.style.top = `${top}px`;
 
-	document.addEventListener('mosemove', (event) => {
-		if (isDragging) {
-			myButton.style.left = `${event.clientX - myButton.offsetWidth / 2}px`;
-         myButton.style.top = `${event.clientY - myButton.offsetHeight / 2}px`;
-        }
-		
+			xCoord.textContent = Math.round(left);
+			yCoord.textContent = Math.round(top);
+		}
+
+		button.addEventListener('click', () => {
+			if (isMoving) {
+				location.reload(); // Оновлює сторінку
+			} else {
+				isMoving = true;
+			}
+		});
+
+	document.addEventListener('mousemove', (event) => {
+		if (isMoving) {
+			let left = event.clientX - button.offsetWidth / 2;
+			let top = event.clientY - button.offsetHeight / 2;
+			
+			if (left < 0) {
+				left = 0;
+			} else if (left > window.innerWidth - button.offsetWidth) {
+				left = window.innerWidth - button.offsetWidth;
+			}
+
+			if (top < 0) {
+				top = 0;
+			} else if (top > window.innerHeight - button.offsetHeight) {
+				top = window.innerHeight - button.offsetHeight;
+			}
+
+
+			button.style.left = `${left}px`;
+			button.style.top = `${top}px`;
+
+			xCoord.textContent = Math.round(left);
+			yCoord.textContent = Math.round(top);
+			
+		}
 	})
 
-		// button.addEventListener('click', () => {
-		// 	header.textContent = 'Welcom!';
-		// 	header.style.color = 'red';
-		// });
+		button.addEventListener('click', () => {
+			header.textContent = 'Welcom!';
+			header.style.color = 'red';
+		});
 
 
 	</script>
