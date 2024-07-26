@@ -19,7 +19,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		height: 100vh;
+			height: calc(100vh - 65px);
 	width: 100vw;
 	}
 
@@ -27,15 +27,17 @@ body {
 		display: block;
 		color: indigo;
 		font-size: 48px;
+	
 	}
 
 button {
 	display: block;
 		position: absolute;
-		transform: translate(-50%, -50%);
+		/* transform: translate(-50%, -50%); */
 		/* z-index: -1; */
 
-	padding: 20px;
+			width: 100px;
+			height: 50px;
 	background: indigo;
 	border-radius: 5px;
 	border-color: coral;
@@ -75,6 +77,7 @@ th, td {
 			<li> <a href="./index.html">Test 1</a></li>
 			<li> <a href="./Example-Button.html">Test 2</a></li>
 			<li> <a href="./Move-Butoon.html">Test 3</a></li>
+						<li> <a href="./block.html">Test 4</a></li>
 	
 		</ul>
 	</nav>

@@ -5,20 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Example-Button</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">
 	<link rel="stylesheet" href="./css/main.min.css">
 
 
 
 	<style>
-body {
-	margin: 0;
-}
+		body {
+			margin: 0;
+		}
 
 		main {
 			display: flex;
 			justify-content: center;
-			align-items: center;
+			align-items:center;
 			flex-direction: column;
 			height: calc(100vh - 65px);
 			width: 100vw;
@@ -28,6 +28,7 @@ body {
 			display: block;
 			color: indigo;
 			font-size: 48px;
+				margin-bottom: 0px;
 		}
 
 		button {
@@ -52,12 +53,13 @@ body {
 			z-index: -1;
 			border-collapse: collapse;
 			height: 10px;
+			/* margin-top: 100px; */
 		}
 
 		th,
 		td {
-	border: 1px solid #02fa5d;
-	padding: 5px;
+			border: 1px solid #02fa5d;
+			padding: 5px;
 			width: 50px;
 			text-align: center;
 		}
@@ -79,7 +81,7 @@ body {
 			<li> <a href="./index.html">Test 1</a></li>
 			<li> <a href="./Example-Button.html">Test 2</a></li>
 			<li> <a href="./Move-Butoon.html">Test 3</a></li>
-						<li> <a href="./block.html">Test 4</a></li>
+			<li> <a href="./block.html">Test 4</a></li>
 
 		</ul>
 	</nav>
@@ -115,45 +117,37 @@ body {
 
 	<script>
 
-		const header = document.getElementById('myHeader');
+		// const header = document.getElementById('myHeader');
 		const button = document.getElementById('myButton');
 
-		const xCoord = document.getElementById('x-coord');
-		const yCoord = document.getElementById('y-coord');
+		// const xCoord = document.getElementById('x-coord');
+		// const yCoord = document.getElementById('y-coord');
 		// const nav = document.querySelector('nav');
 
+		let isDragging = false;
 
-		button.addEventListener('click', () => {
-			header.textContent = 'Welcom!';
-			header.style.color = 'red';
-		});
+	myButton.addEventListener('mousedown', () => {
+		isDragging = true;
+	});
 
+	document.addEventListener('mouseup', () => {
+isDragging = false;
+	});
 
-		let x = Math.random() * (window.innerWidth - 50);
-		let y = Math.random() * (window.innerHeight - 50);
+	document.addEventListener('mosemove', (event) => {
+		if (isDragging) {
+			myButton.style.left = `${event.clientX - myButton.offsetWidth / 2}px`;
+         myButton.style.top = `${event.clientY - myButton.offsetHeight / 2}px`;
+        }
+		
+	})
 
-let speedX = 3;
-let speedY = 3;
-
-function moveMyButton() {
-x += speedX;
-y += speedY;
-
-if (x <= 0 || x >= window.innerWidth - 50) {speedX = -speedX;}
-if (y <= 0 || y >= window.innerHeight - 50) {speedY = -speedY;}
-
-button.style.left = x + 'px';
-button.style.top = y + 'px';
-
-xCoord.textContent = Math.round(x);
-yCoord.textContent = Math.round(y);
+		// button.addEventListener('click', () => {
+		// 	header.textContent = 'Welcom!';
+		// 	header.style.color = 'red';
+		// });
 
 
-	requestAnimationFrame(moveMyButton);
-
-}
-
-moveMyButton();
 	</script>
 
 
