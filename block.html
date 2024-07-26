@@ -126,20 +126,20 @@
 
 		let isMoving = false;
 
-		function centerButton() {
-			const left = (window.innerWidth - button.offsetWidth) / 2;
-			const top = (window.innerHeight - button.offsetHeight) / 2;
+		// function centerButton() {
+		// 	const left = (window.innerWidth - button.offsetWidth) / 2;
+		// 	const top = (window.innerHeight - button.offsetHeight) / 2;
 
-			button.style.left = `${left}px`;
-			button.style.top = `${top}px`;
+		// 	button.style.left = `${left}px`;
+		// 	button.style.top = `${top}px`;
 
-			xCoord.textContent = Math.round(left);
-			yCoord.textContent = Math.round(top);
-		}
+		// 	xCoord.textContent = Math.round(left);
+		// 	yCoord.textContent = Math.round(top);
+		// }
 
 		button.addEventListener('click', () => {
 			if (isMoving) {
-				location.reload(); // Оновлює сторінку
+				location.reload(); 
 			} else {
 				isMoving = true;
 			}
