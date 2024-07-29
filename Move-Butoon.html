@@ -13,6 +13,7 @@
 	<style>
 body {
 	margin: 0;
+	position: fixed;
 }
 
 		main {
@@ -21,7 +22,7 @@ body {
 			align-items:center;
 			flex-direction: column;
 			height: calc(100vh - 65px);
-			max-width: 100vw;
+			width: 100vw;
 			margin: 0;
 
 		}
@@ -136,7 +137,7 @@ body {
 		});
 
 
-		let x = Math.random() * (window.innerWidth - 50);
+		let x = Math.random() * (window.innerWidth - 100);
 		let y = Math.random() * (window.innerHeight - 50);
 
 let speedX = 3;
@@ -146,7 +147,7 @@ function moveMyButton() {
 x += speedX;
 y += speedY;
 
-if (x <= 0 || x >= window.innerWidth - 50) {speedX = -speedX;}
+if (x <= 0 || x >= window.innerWidth - 100) {speedX = -speedX;}
 if (y <= 0 || y >= window.innerHeight - 50) {speedY = -speedY;}
 
 button.style.left = x + 'px';
