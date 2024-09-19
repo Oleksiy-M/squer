@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test-5</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">
+	<link rel="stylesheet" href="./css/main.min.css">
+
+
+
+	<style>
+		body {
+			margin: 0;
+			position: fixed;
+		}
+
+		main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+
+		}
+
+		h1 {
+			display: block;
+			color: indigo;
+			font-size: 48px;
+			margin-bottom: 0px;
+			margin: 0 0 40px;
+
+			@media screen and (min-width: 768px) {
+				font-size: 68px;
+			}
+		}
+
+
+	</style>
+</head>
+
+
+
+<body>
+	<nav>
+		<ul>
+			<li> <a href="./index.html">Test 1</a></li>
+			<li> <a href="./Example-Button.html">Test 2</a></li>
+			<li> <a href="./Move-Butoon.html">Test 3</a></li>
+			<li> <a href="./block.html">Test 4</a></li>
+			<li class="site-nav__link--current"> <a href="./test5.html">Test 5</a></li>
+
+		</ul>
+	</nav>
+
+	<main>
+
+
+<p id="myStroke">12абв34АГ5678ДЕ9011яя1213</p>
+
+	</main>
+
+
+
+	<script>
+	// const stroke = document.getElementById('myStroke');
+	let original = "12абв34АГ5678ДЕ9011яя1213";
+	let result = "";
+
+	for (let i = original.length - 1; i >= 0; i--) {
+		let char = original[i];
+		if (char >= 'A' && char <= 'Z' ||char >= 'А' && char <= 'Я' || !isNaN(char)) {
+			result += char;
+		}
+	}
+	console.log(result);
+	</script>
+
+
+
+
+</body>
+
+</html>
