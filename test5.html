@@ -18,25 +18,24 @@
 
 		main {
 			display: flex;
+			flex-direction: column;
+			align-items: center;
 			justify-content: center;
 			width: 100vw;
 			height: 100vh;
 			margin:0;
-			padding: 200px 0 0;
+			/* padding: 200px 0 0; */
 
 		}
 
-		/* h1 {
-			display: block;
-			color: indigo;
-			font-size: 48px;
-			margin-bottom: 0px;
-			margin: 0 0 40px;
+	p {
+	margin: 0 0 40px 0;
+			font-weight: 400;
+	text-decoration: none;
+	font-size: 19px;
+	}	
 
-			@media screen and (min-width: 768px) {
-				font-size: 68px;
-			}
-		} */
+
 
 
 	</style>
@@ -60,6 +59,8 @@
 
 
 <p >12абв34АГ5678ДЕ9011яя1213</p>
+<p id="my-Stroke"> </p>
+
 
 	</main>
 
@@ -69,6 +70,7 @@
 	// const stroke = document.getElementById('myStroke');
 	let original = "12абв34АГ5678ДЕ9011яя1213";
 	let result = "";
+	const myStroke = document.getElementById('my-Stroke');
 
 	for (let i = original.length - 1; i >= 0; i--) {
 		let char = original[i];
@@ -77,8 +79,9 @@
 		}
 	}
 
-	alert(result)
+	alert(result);
 
+	myStroke.textContent = result
 	</script>
 
 
