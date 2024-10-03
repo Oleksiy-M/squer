@@ -23,21 +23,17 @@
 			justify-content: center;
 			width: 100vw;
 			height: 100vh;
-			margin:0;
+			margin: 0;
 			/* padding: 200px 0 0; */
 
 		}
 
-	p {
-	margin: 0 0 40px 0;
+		p {
+			margin: 0 0 40px 0;
 			font-weight: 400;
-	text-decoration: none;
-	font-size: 19px;
-	}	
-
-
-
-
+			text-decoration: none;
+			font-size: 19px;
+		}
 	</style>
 </head>
 
@@ -50,8 +46,8 @@
 			<li> <a href="./Example-Button.html">Test 2</a></li>
 			<li> <a href="./Move-Butoon.html">Test 3</a></li>
 			<li> <a href="./test4.html">Test 4</a></li>
-			<li class="site-nav__link--current"> <a href="./test5.html">Test 5</a></li>
-			<li> <a href="./test6.html">Test 6</a></li>
+			<li> <a href="./test5.html">Test 5</a></li>
+			<li class="site-nav__link--current"> <a href="./test6.html">Test 6</a></li>
 
 		</ul>
 	</nav>
@@ -59,8 +55,8 @@
 	<main>
 
 
-<p >12абв34АГ5678ДЕ9011яя1213</p>
-<p id="my-Stroke"> </p>
+		<p>12абв34АГ5678ДЕ9011яя1213</p>
+		<p id="my-Stroke"> </p>
 
 
 	</main>
@@ -68,21 +64,22 @@
 
 
 	<script>
-	// const stroke = document.getElementById('myStroke');
 	let original = "12абв34АГ5678ДЕ9011яя1213";
-	let result = "";
-	const myStroke = document.getElementById('my-Stroke');
+		const myStroke = document.getElementById('my-Stroke');
 
-	for (let i = original.length - 1; i >= 0; i--) {
-		let char = original[i];
-		if (char >= 'A' && char <= 'Z' ||char >= 'А' && char <= 'Я' || !isNaN(char)) {
-			result += char;
-		}
+	let filtered = original.match(/[A-ZА-Я0-9]/g);
+	let reversed = [];
+	for (let i = 0; i < filtered.length; i++) {
+		reversed.unshift(filtered[i]);
 	}
 
-	alert(result);
+	let result = "";
+	for (let i = 0; i < reversed.length; i++) {
+		result += reversed[i];
+	}
 
 	myStroke.textContent = result
+
 	</script>
 
 
