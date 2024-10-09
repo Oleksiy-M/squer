@@ -55,7 +55,7 @@
 	<main>
 
 
-		<p>12абв34АГ5678ДЕ9011яя1213</p>
+		<p>12абв34АГ5678ДЕ91011яя1213</p>
 		<p id="my-Stroke"> </p>
 
 
@@ -64,21 +64,39 @@
 
 
 	<script>
-	let original = "12абв34АГ5678ДЕ9011яя1213";
-		const myStroke = document.getElementById('my-Stroke');
 
-	let filtered = original.match(/[A-ZА-Я0-9]/g);
-	let reversed = [];
-	for (let i = 0; i < filtered.length; i++) {
-		reversed.unshift(filtered[i]);
+	const myStroke = document.getElementById('my-Stroke');
+	let original = "12абв34АГ5678ДЕ91011яя1213";
+
+	let filtered = original.replace(/[а-я]/g, '');
+	let indexMap = {};
+	let i = 1;
+
+	for (let j = 0; j < filtered.length; j++) {
+		let currentChar = filtered[j];
+		let nextChar = filtered[j + 1];
+
+		if (currentChar === '1' && ['0', '1', '2', '3'].includes(nextChar) && j > 0) {
+			let number = currentChar + nextChar;
+			indexMap[number + '_' + i] = i;
+			i++;
+			j++;
+		} else {
+	
+			indexMap[currentChar + '_' + i] = i;
+			i++;
+		}
 	}
 
-	let result = "";
-	for (let i = 0; i < reversed.length; i++) {
-		result += reversed[i];
-	}
+	let result = Object.keys(indexMap)
+		.sort((a, b) => indexMap[b] - indexMap[a])
+		.map(key => key.split('_')[0])
+		.join('');
+
+	console.log(result);
 
 	myStroke.textContent = result
+	
 
 	</script>
 
