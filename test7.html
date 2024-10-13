@@ -67,7 +67,7 @@
 	<script>
 
 		const myStroke = document.getElementById('my-Stroke');
-		let original = "12абв34АГ5678ДЕ91011яя12131415";
+		let original = "12абв34АГ5678ДЕ91011яя1213К1920253035404550759099";
 
 		let filtered = original.replace(/[а-я]/g, '');
 		let indexMap = {};
@@ -77,7 +77,7 @@
 			let currentChar = filtered[j];
 			let nextChar = filtered[j + 1];
 
-			if (currentChar === '1' && ['0', '1', '2', '3', '4'].includes(nextChar) && j > 0) {
+			if (/[1-9]/.test(currentChar) && /[0-9]/.test(nextChar) && j > 9) {
 				let number = currentChar + nextChar;
 				indexMap[number + '_' + i] = i;
 				i++;
