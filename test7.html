@@ -47,8 +47,8 @@
 			<li> <a href="./Move-Butoon.html">Test 3</a></li>
 			<li> <a href="./test4.html">Test 4</a></li>
 			<li> <a href="./test5.html">Test 5</a></li>
-			<li class="site-nav__link--current"><a href="./test6.html">Test 6</a></li>
-			<li> <a href="./test7.html">Test 7</a></li>
+			<li> <a href="./test6.html">Test 6</a></li>
+			<li class="site-nav__link--current"> <a href="./test7.html">Test 7</a></li>
 
 		</ul>
 	</nav>
@@ -66,38 +66,38 @@
 
 	<script>
 
-	const myStroke = document.getElementById('my-Stroke');
-	let original = "12абв34АГ5678ДЕ91011яя1213";
+		const myStroke = document.getElementById('my-Stroke');
+		let original = "12абв34АГ5678ДЕ91011яя12131415";
 
-	let filtered = original.replace(/[а-я]/g, '');
-	let indexMap = {};
-	let i = 1;
+		let filtered = original.replace(/[а-я]/g, '');
+		let indexMap = {};
+		let i = 1;
 
-	for (let j = 0; j < filtered.length; j++) {
-		let currentChar = filtered[j];
-		let nextChar = filtered[j + 1];
+		for (let j = 0; j < filtered.length; j++) {
+			let currentChar = filtered[j];
+			let nextChar = filtered[j + 1];
 
-		if (currentChar === '1' && ['0', '1', '2', '3'].includes(nextChar) && j > 0) {
-			let number = currentChar + nextChar;
-			indexMap[number + '_' + i] = i;
-			i++;
-			j++;
-		} else {
-	
-			indexMap[currentChar + '_' + i] = i;
-			i++;
+			if (currentChar === '1' && ['0', '1', '2', '3', '4'].includes(nextChar) && j > 0) {
+				let number = currentChar + nextChar;
+				indexMap[number + '_' + i] = i;
+				i++;
+				j++;
+			} else {
+
+				indexMap[currentChar + '_' + i] = i;
+				i++;
+			}
 		}
-	}
 
-	let result = Object.keys(indexMap)
-		.sort((a, b) => indexMap[b] - indexMap[a])
-		.map(key => key.split('_')[0])
-		.join('');
+		let result = Object.keys(indexMap)
+			.sort((a, b) => indexMap[b] - indexMap[a])
+			.map(key => key.split('_')[0])
+			.join('');
 
-	console.log(result);
+		console.log(result);
 
-	myStroke.textContent = result
-	
+		myStroke.textContent = result
+
 
 	</script>
 
