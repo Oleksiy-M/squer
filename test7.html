@@ -56,7 +56,7 @@
 	<main>
 
 
-		<p>12абв34АГ5678ДЕ91011яя1213К19,20,25,30,35,40,45,50,75,90,99</p>
+		<p>12абв34АГ5678ДЕ9П1011яя1213К19,20,25,30,35,40,45,50,75,90,95</p>
 		<p id="my-Stroke"> </p>
 
 
@@ -67,7 +67,7 @@
 	<script>
 
 		const myStroke = document.getElementById('my-Stroke');
-		let original = "12абв34АГ5678ДЕ91011яя1213К1920253035404550759099";
+		let original = "12абв34АГ5678ДЕ9П1011яя1213К1920253035404550759095100102";
 
 		let filtered = original.replace(/[а-я]/g, '');
 		let indexMap = {};
@@ -76,14 +76,23 @@
 		for (let j = 0; j < filtered.length; j++) {
 			let currentChar = filtered[j];
 			let nextChar = filtered[j + 1];
+			let nextNextChar = filtered[j + 2];
 
-			if (/[1-9]/.test(currentChar) && /[0-9]/.test(nextChar) && j > 12) {
+			    if (/[1-9]/.test(currentChar) && /[0-9]/.test(nextChar) && /[0-9]/.test(nextNextChar) && j > 44) {
+				let number = currentChar + nextChar + nextNextChar; 
+				indexMap[number + '_' + i] = i;
+				i++;
+				j += 2; 
+			}
+			
+			else if (/[1-9]/.test(currentChar) && /[0-9]/.test(nextChar) && j > 13) {
 				let number = currentChar + nextChar;
 				indexMap[number + '_' + i] = i;
 				i++;
-				j++;
-			} else {
-
+				j++; 
+			}
+		
+			else {
 				indexMap[currentChar + '_' + i] = i;
 				i++;
 			}
