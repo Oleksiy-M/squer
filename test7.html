@@ -84,7 +84,7 @@ font-weight: 100;
 
 
 <script>
-	let inputText = prompt ('Enter chars (123А...)', '12абв34АГ5678ДЕ910П11яя12131415161718К192021222324252627282930М313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105БФ106107108109');
+	let inputText = prompt ('Enter chars (123А...)', '12абв34АГ5678ДЕ910П11яя12131415161718К192021222324252627282930М313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100Б101102103104105Ф106107108109');
 	const lengtChars = document.getElementById('lengt-Chars').textContent = inputText || 'empty';
 	const myStroke = document.getElementById('my-Stroke');
 
@@ -108,7 +108,7 @@ font-weight: 100;
 				if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar)) {
 					let number = currentChar + nextChar;  
 					index[number + '_' + i] = i;  
-				if (currentChar === '1' && nextChar === '0' && nextnextChar === '0')  break;
+				if (currentChar === '9' && nextChar === '9') break;
 					i++;
 					j++; } 
 			 	else {
@@ -119,16 +119,17 @@ font-weight: 100;
 			i++;}
 		}
 
-				for (j = 99; j < filtr.length; j++) {
-						let currentChar = filtr[j];
-						let nextChar = filtr[j + 1];
-						let nextnextChar = filtr[j + 2];
+		for (j = 99; j < filtr.length; j++) {
+				let currentChar = filtr[j];
+				let nextChar = filtr[j + 1];
+				let nextnextChar = filtr[j + 2];
 
 
-	if (currentChar === '1' && nextChar === '0' && nextnextChar === '0') {
-			secondTen = true;
-		}
-				if (secondTen) {
+			if (currentChar === '1' && nextChar === '0' && nextnextChar === '0') {
+				secondTen = true;
+				}
+
+			if (secondTen) {
 				if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar) && /^[0-9]$/.test(nextnextChar)) {
 					let number = currentChar + nextChar + nextnextChar;  
 					index[number + '_' + i] = i;  
@@ -140,7 +141,6 @@ font-weight: 100;
 				}
 			}
 		}
-
 
 	let result = Object.keys(index)
 		.sort((a, b) => index[b] - index[a])
