@@ -110,17 +110,15 @@ font-weight: 100;
 					index[number + '_' + i] = i;  
 				if (currentChar === '1' && nextChar === '0' && nextnextChar === '0')  break;
 					i++;
-					j++; 
-				} 
-			 else {
-			index[currentChar + '_' + i] = i;
-			i++;
-				}
+					j++; } 
+			 	else {
+					index[currentChar + '_' + i] = i;
+					i++; }
 			} else {
-				index[currentChar + '_' + i] = i;
-				i++;
-	}
-}
+			index[currentChar + '_' + i] = i;
+			i++;}
+		}
+
 				for (j = 99; j < filtr.length; j++) {
 						let currentChar = filtr[j];
 						let nextChar = filtr[j + 1];
