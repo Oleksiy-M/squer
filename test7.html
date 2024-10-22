@@ -70,7 +70,7 @@ font-weight: 100;
 <container class="container">
 
 	
-	<p id="myText">12абв34АГ5678ДЕ9П1011яя12131415161718К192021222324252627282930М313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100</p>
+	<p id="myText">12абв34АГ5678ДЕ9П1011яя12131415161718К192021222324252627282930М313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109</p>
 	<p id="my-Stroke"> </p>
 	
 </container>
@@ -95,20 +95,29 @@ font-weight: 100;
 		for (j = 0; j < filtr.length; j++) {
 				let currentChar = filtr[j];
 				let nextChar = filtr[j + 1];
-				let nextnextChar = filtr[j + 2];
+				// let nextnextChar = filtr[j + 2];	
 
 	if (currentChar === '1' && nextChar === '0' ) {
 			firstTen = true;  
 		}
-
-				if (firstTen) {
-				if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar)) {
-					let number = currentChar + nextChar;  
-					index[number + '_' + i] = i;  
+		
+		if (firstTen) {
+			if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar)) {
+				let number = currentChar + nextChar;  
+				index[number + '_' + i] = i;  
+				if (currentChar === '9' && nextChar === '9') break;
 					i++;
 					j++; 
-				} 
-		
+				} }
+		else {
+			index[currentChar + '_' + i] = i;
+			i++;
+		}
+	}
+				for (j = 100; j < filtr.length; j++) {
+						let currentChar = filtr[j];
+						let nextChar = filtr[j + 1];
+						let nextnextChar = filtr[j + 2];
 
 
 	if (currentChar === '1' && nextChar === '0' && nextnextChar === '0') {
@@ -121,18 +130,13 @@ font-weight: 100;
 					i++;
 					j += 2; 
 				} }
-
+				
+				
+				else {
+					index[currentChar + '_' + i] = i;
+					i++;
 				}
-
-			 else {
-				index[currentChar + '_' + i] = i;
-				i++;
 			}
-
-		}
-
-
-
 
 
 
