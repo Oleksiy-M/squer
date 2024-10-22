@@ -32,11 +32,14 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			width:850px;
-			padding: 25px;
+			padding: 10px;
+			width:350px;
 			border: 1px red solid;
-		}
-		
+			@media screen and (min-width: 768px) {
+				padding: 25px;
+				width:850px;
+		}}
+
 		p {
 word-break: break-all;
 padding: 10px;
@@ -108,7 +111,9 @@ font-weight: 100;
 				if (currentChar === '1' && nextChar === '0' && nextnextChar === '0')  break;
 					i++;
 					j++; 
-				} }
+				} 
+			}
+
 		else {
 			index[currentChar + '_' + i] = i;
 			i++;
