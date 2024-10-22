@@ -98,7 +98,7 @@ font-weight: 100;
 		for (j = 0; j < filtr.length; j++) {
 				let currentChar = filtr[j];
 				let nextChar = filtr[j + 1];
-				let nextnextChar = filtr[j + 2];	
+														console.log('Current:', currentChar, 'Next:', nextChar);			
 
 			if (currentChar === '1' && nextChar === '0' ) {
 				firstTen = true;  
@@ -108,22 +108,26 @@ font-weight: 100;
 				if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar)) {
 					let number = currentChar + nextChar;  
 					index[number + '_' + i] = i;  
-				if (currentChar === '9' && nextChar === '9') break;
+														console.log('Index (Two):', number, i)
 					i++;
 					j++; } 
-			 	else {
+				else {
 					index[currentChar + '_' + i] = i;
+														console.log('Index (Single): ', currentChar, i);
 					i++; }
+				if (currentChar === '9' && nextChar === '9')  break;
 			} else {
 			index[currentChar + '_' + i] = i;
+														console.log('Index (Before First Ten): ', currentChar, i);			
 			i++;}
 		}
 
-		for (j = 99; j < filtr.length; j++) {
+		for (j = 0; j < filtr.length; j++) {
 				let currentChar = filtr[j];
 				let nextChar = filtr[j + 1];
 				let nextnextChar = filtr[j + 2];
 
+														console.log('2 - Current:', currentChar, 'Next:', nextChar, 'Next Next:', nextnextChar);
 
 			if (currentChar === '1' && nextChar === '0' && nextnextChar === '0') {
 				secondTen = true;
@@ -133,10 +137,12 @@ font-weight: 100;
 				if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar) && /^[0-9]$/.test(nextnextChar)) {
 					let number = currentChar + nextChar + nextnextChar;  
 					index[number + '_' + i] = i;  
+														console.log('Index (Three): ', number, i);
 					i++;
 					j += 2; 
 				} else {
 					index[currentChar + '_' + i] = i;
+														console.log('Index (Before Three):', currentChar, i);
 					i++;
 				}
 			}
