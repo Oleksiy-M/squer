@@ -88,8 +88,8 @@ font-weight: 100;
 	let index = {};
 	let i = 1;
 	let j;
-	let hundred = false;
-	let thousand  = false;
+	let firstTen = false;
+	let secondTen  = false;
 
 
 		for (j = 0; j < filtr.length; j++) {
@@ -98,30 +98,31 @@ font-weight: 100;
 				let nextnextChar = filtr[j + 2];
 
 	if (currentChar === '1' && nextChar === '0' ) {
-			hundred = true;  
+			firstTen = true;  
 		}
 
-				if (hundred) {
+				if (firstTen) {
 				if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar)) {
 					let number = currentChar + nextChar;  
 					index[number + '_' + i] = i;  
 					i++;
 					j++; 
 				} 
-			}
+		
 
 
-	// if (currentChar === '1' && nextChar === '0' && nextnextChar === '0') {
-	// 		thousand = true;
-	// 	}
-				// if (thousand) {
-				// if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar) && /^[0-9]$/.test(nextnextChar)) {
-				// 	let number = currentChar + nextChar + nextnextChar;  
-				// 	index[number + '_' + i] = i;  
-				// 	i++;
-				// 	j += 2; 
-				// } }
+	if (currentChar === '1' && nextChar === '0' && nextnextChar === '0') {
+			secondTen = true;
+		}
+				if (secondTen) {
+				if (/^[1-9]$/.test(currentChar) && /^[0-9]$/.test(nextChar) && /^[0-9]$/.test(nextnextChar)) {
+					let number = currentChar + nextChar + nextnextChar;  
+					index[number + '_' + i] = i;  
+					i++;
+					j += 2; 
+				} }
 
+				}
 
 			 else {
 				index[currentChar + '_' + i] = i;
