@@ -22,6 +22,8 @@
 		<li> <a href="./test4.html">Test 4</a></li>
 		<li> <a href="./test5">Test 5</a></li>
 		<li> <a href="./test6.html">Test 6</a></li>
+		<li> <a href="./test7.html">Test 7</a></li>
+		<li> <a href="./test8.html">Test 8</a></li>
 		
 	</ul>
 </nav>
@@ -59,8 +61,26 @@
 
 	</main>
 <script>
+	function main() {
+		var str = "123456789101112132939100",
+			step = 1, probe;
 
-	// 123456789011121314 => 413121110987654321 ?	
+			while (true) {
+			probe = str.substring(0, step)
+
+			accum.unshift(probe)
+			str = str.substring(step)
+
+			if (Number(str.substring(0, 1)) < Number(probe.substring(0, 1)))
+				step++
+
+			if (!str.length)
+				break;
+		}
+		var result = accum.join()
+	}
+		console.log(result);
+	main()
 	// <script src="./js/squer.js">
 	</script>
 </body>
